@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('companies', \App\Http\Controllers\CompanyController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
