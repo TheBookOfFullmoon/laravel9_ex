@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 
 @section('title', 'Edit Company Form - Laravel 9 CRUD Tutorial')
 
@@ -24,21 +24,24 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <strong>Company Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Company Name" value="{{$company->name}}">
+                <input type="text" name="name" class="form-control" placeholder="Company Name"
+                       value="{{$company->name}}">
                 @error('name')
                 <div class="alert alert-danger mt-1 mb-1">{{$message}}</div>
                 @enderror
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <strong>Company Email:</strong>
-                <input type="email" name="email" class="form-control" placeholder="Company Email" value="{{$company->email}}">
+                <input type="email" name="email" class="form-control" placeholder="Company Email"
+                       value="{{$company->email}}">
                 @error('email')
                 <div class="alert alert-danger mt-1 mb-1">{{$message}}</div>
                 @enderror
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <strong>Company Address:</strong>
-                <input type="text" name="address" class="form-control" placeholder="Company Address" value="{{$company->address}}">
+                <input type="text" name="address" class="form-control" placeholder="Company Address"
+                       value="{{$company->address}}">
                 @error('address')
                 <div class="alert alert-danger mt-1 mb-1">{{$message}}</div>
                 @enderror

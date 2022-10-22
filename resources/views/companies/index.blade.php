@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 @section('title', 'Laravel 9 CRUD Tutorial Example')
 @section('content')
     <div class="row">
