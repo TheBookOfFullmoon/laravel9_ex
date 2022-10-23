@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,20 +12,18 @@ class Company extends Model
 
     protected $fillable = ['name', 'email', 'address'];
 
-    public function setNameAttribute($value){
-        $this->attributes['name'] = strtolower($value);
-    }
-
-    public function getNameAttribute($value): string
+    protected function name(): Attribute
     {
-        return strtoupper($value);
+        return Attribute::make(
+            get: fn($value) => strtoupper($value),
+            set: fn($value) => strtolower($value)
+        );
     }
 
-    public function setAddressAttribute($value){
-        $this->attributes['address'] = strtolower($value);
-    }
-
-    public function getAddressAttribute($value): string{
-        return strtoupper($value);
+    protected function address(): Attribute{
+        return Attribute::make(
+            get: fn($value) => strtoupper($value),
+            set: fn($value) => strtolower($value)
+        );
     }
 }
